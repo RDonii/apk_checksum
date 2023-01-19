@@ -1,9 +1,8 @@
 import streamlit as st
 import hashlib
 
-st.title('Ayubxon uchun maxsus')
-st.subheader("Test qibko'ring")
-uploaded_file = st.file_uploader('Flutter mahsulotizi yuklenchi qani:', type=['apk'])
+st.title('SHA256 File Checksum')
+uploaded_file = st.file_uploader('Upload your apk file:', type=['apk'])
 if uploaded_file is not None:
     sha256_hash = hashlib.sha256()
     for byte_block in iter(lambda: uploaded_file.read(4096),b""):
